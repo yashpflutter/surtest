@@ -1,6 +1,5 @@
 FROM nginx:latest
+RUN rm -rf /usr/share/nginx/html/*
 COPY . /usr/share/nginx/html
-COPY . /var/www/html/
-RUN  python -m http.server 8000
-EXPOSE 8000
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
